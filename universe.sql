@@ -11,7 +11,7 @@ CREATE TABLE galaxy(
 
 CREATE TABLE star(
 	star_id SERIAL PRIMARY KEY,
-    star_system_id INT,
+    	star_system_id INT,
 	galaxy_id INT REFERENCES galaxy(galaxy_id),
 	name VARCHAR(30) NOT NULL UNIQUE,
 	distance_from_earth TEXT,
@@ -24,7 +24,7 @@ CREATE TABLE star(
 CREATE TABLE planet(
 	planet_id SERIAL PRIMARY KEY,
 	galaxy_id INT,
-    star_system_id INT,
+    	star_system_id INT,
 	star_id INT REFERENCES star(star_id),
 	name VARCHAR(30) NOT NULL UNIQUE,
 	distance_from_earth TEXT,
@@ -43,7 +43,7 @@ CREATE TABLE moon(
 
 CREATE TABLE star_system(
 	star_system_id SERIAL PRIMARY KEY,
-    galaxy_id INT REFERENCES galaxy(galaxy_id),
+    	galaxy_id INT REFERENCES galaxy(galaxy_id),
 	name VARCHAR(30) NOT NULL UNIQUE,
 	more_than_one_star BOOLEAN,
 	description TEXT,
